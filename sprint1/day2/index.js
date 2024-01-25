@@ -3,4 +3,4 @@
 
 // console.log(isEven(a));
 
-console.log(process.argv);
+// console.log(process.argv);
