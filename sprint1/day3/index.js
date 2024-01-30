@@ -1,6 +1,12 @@
 const http = require("http");
 const fs = require("fs");
+const dns = require("dns");
 
+dns.lookup("www.google.com",(err,address,family) =>{
+    console.log(err);
+    console.log(address);
+    console.log(family);
+})
 // const data = fs.readFileSync("./db.json","utf-8");
 const server = http.createServer((req,res) => {
     req.url === "/" ? res.end("Home Page")

@@ -1,0 +1,46 @@
+{
+    "students": [
+        {
+            "id": 1,
+            "name": "Deepak",
+            "age": 22
+        },
+        {
+            "id": 2,
+            "name": "KDeepak",
+            "age": 23
+        },
+        {
+            "id": 3,
+            "name": "Deepak132",
+            "age": 32
+        },
+        {
+            "id": 10,
+            "name": "FraZzle",
+            "age": 22
+        }
+    ],
+    "teachers": [
+        {
+            "id": 1,
+            "name": "Sir",
+            "age": 22
+        },
+        {
+            "id": 2,
+            "name": "KPOP",
+            "age": 23
+        },
+        {
+            "id": 3,
+            "name": "Teacher32",
+            "age": 32
+        },
+        {
+            "id": 6,
+            "name": "FraZzle",
+            "age": 22
+        }
+    ]
+}
