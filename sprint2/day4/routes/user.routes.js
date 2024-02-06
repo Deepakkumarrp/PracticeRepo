@@ -8,6 +8,7 @@ const userRouter = express.Router();
 
 userRouter.get("/",async(req,res) => {
     try{
+        // Read 
         const users = await UserModel.find(req.query);
         res.status(200).send({"users":users})
     }catch(err){
@@ -18,6 +19,7 @@ userRouter.get("/",async(req,res) => {
 userRouter.post("/", async(req,res) => {
     const payload = req.body;
     try{
+        // Add
         const user = new UserModel(payload);
         await user.save();
         res.status(200).send({"msg":"New user has been added."})
@@ -27,7 +29,7 @@ userRouter.post("/", async(req,res) => {
 })
 
 userRouter.patch("/:userID", async(req,res) => {
-    const userID = req.params;
+    const {userID} = req.params;
     try{
         // Mongosse way to update
         await UserModel.findByIdAndUpdate({_id:userID},req.body)
@@ -38,7 +40,7 @@ userRouter.patch("/:userID", async(req,res) => {
 })
 
 userRouter.delete("/:userID", async(req,res) => {
-    const userID = req.params;
+    const {userID} = req.params;
     try{
         // Mongosse way to delete
         await UserModel.findByIdAndDelete({_id:userID})
