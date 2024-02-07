@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Register Page</h1>
+        <input type="text" id="username" placeholder="username">
+        <input type="text" id="email" placeholder="email">
+        <input type="text" id="pass" placeholder="password">
+        <button onclick="register()">Register</button>
+</body>
+</html>
+<script>
+    const register = () => {
+        fetch("https://localhost:8080/users/register", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify({
+                username: document.getElementById("username").value,
+                pass: document.getElementById("pass").value,
+                email: document.getElementById("email").value,
+            })
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(e => console.log(e))
+    }
+</script>
