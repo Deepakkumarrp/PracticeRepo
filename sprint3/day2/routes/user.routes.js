@@ -37,7 +37,6 @@ userRouter.post("/login",async(req,res) => {
         bcrypt.compare(pass, user.pass).then(function(result) {
             if( result){
                 res.send({"mssg":"Login Successfully!","token":jwt.sign({ foo: 'bar' }, 'shhhhh')})
-
             }else{
                 res.send({"msg":"User doesn't exists."})
 

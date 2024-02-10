@@ -5,8 +5,11 @@ const main = async() => {
     try{
         const connection = await mongoose.connect("mongodb://127.0.0.1:27017/b33mongoose");
         console.log("connected to the DB.")
-        UserModel.insertMany([{name:"Chunnu",age:34,isMarried:true,city:"Pune"}])
-        console.log("Data has been added.")
+        // UserModel.insertMany([{name:"Chunnu",age:34,isMarried:true,city:"Pune"}])
+        // console.log("Data has been added.")
+
+        const users = await UserModel.find();
+        console.log(users);
     }catch(e){
         console.log(e);
     }
