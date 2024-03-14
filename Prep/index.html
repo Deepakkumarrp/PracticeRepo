@@ -5,15 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      
-      
+      * {
+        box-sizing: border-box;
+      }
+      .container {
+        border: 2px solid;
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+      }
+      .centered-div {
+        border: 2px solid red;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* margin: auto; */
+        
+      }
     </style>
   </head>
   <body>
-    <div>Div-Block</div>
-    <div id="inline">INline</div>
-    <div id="inline-block">INline</div>
-    <span>Span</span>
-    <span id="inline-block">inline-block span</span>
+    <div class="container">
+      <div class="centered-div">center</div>
+    </div>
   </body>
 </html>
